@@ -2,7 +2,8 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 function App() {
   return (
-    <div className="border p-12">
+    // here import  the home page 
+    <div className="border md:p-12 p-8">
       <Home />
     </div>
   );

@@ -2,6 +2,8 @@ import React from "react";
 import { heading, bodyDataItem } from "../../utils/data";
 
 const BodyDataShow = ({ selectedItems }) => {
+  /* all  bodyDataItem  item filtered here */
+
   const filteredBodyDataItem = bodyDataItem.filter((row, rowIndex) => {
     return Object.keys(row).some((key, collIndex) => selectedItems[collIndex]);
   });
@@ -12,12 +14,12 @@ const BodyDataShow = ({ selectedItems }) => {
       <>
         {filteredBodyDataItem.length === 0 && (
           <div className="text-2xl text-red-500 font-semibold text-center mt-10">
-            If you want to see a content please <br /> click the menu icon and select
-            the category.
+            If you want to see a content please <br /> click the menu icon and
+            select the category.
           </div>
         )}
       </>
-      
+
       {/* Heading */}
       <div className="flex mt-32 ">
         {heading.map(
@@ -35,6 +37,8 @@ const BodyDataShow = ({ selectedItems }) => {
 
       {/* Body */}
       <div className="">
+        {/* all  filteredBodyDataItem item mapping here */}
+
         {filteredBodyDataItem.map((row, rowIndex) => (
           <div className="flex mb-2" key={rowIndex}>
             {Object.values(row).map(
